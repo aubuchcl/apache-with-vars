@@ -22,9 +22,6 @@ RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 RUN chown -R www-data:www-data $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 RUN chmod 755 $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
-# Copy application files
-COPY --chown=www-data:www-data ./app /var/www/html
-
 # Clean up
 RUN rm -rf /var/lib/apt/lists/*
 
